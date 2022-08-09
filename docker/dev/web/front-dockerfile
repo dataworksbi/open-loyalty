@@ -1,4 +1,4 @@
-FROM openloyalty/base-nodejs AS front
+FROM divante/open-loyalty-base-nodejs AS front
 
 WORKDIR /var/www/frontend
 

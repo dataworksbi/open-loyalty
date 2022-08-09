@@ -106,13 +106,16 @@ After starting Open Loyalty, it exposes services under the following URLs:
 
 If you are a developer and want to attach source code, then you have to build base docker images:
 
+Run this script only from ./docker/base directory
 ```
-./docker/base/build_dev.sh
+cd ./docker/base/
+./build_dev.sh
 ```
 
 and run containers:
 
 ```
+cd ../../
 docker-compose -f docker/docker-compose.dev.yml up
 ```
 

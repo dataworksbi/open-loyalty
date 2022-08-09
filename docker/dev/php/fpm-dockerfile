@@ -1,8 +1,8 @@
-FROM composer:1 AS composer
+FROM composer:2.2 AS composer
 FROM openloyalty/base-php-fpm AS base
 
-RUN pecl install xdebug
-RUN docker-php-ext-enable xdebug
+#RUN pecl install xdebug
+#RUN docker-php-ext-enable xdebug
 RUN usermod -u 1000 www-data
 
 RUN pecl install apcu
@@ -22,8 +22,8 @@ RUN echo "pm.start_servers=5" >> /usr/local/etc/php-fpm.d/www.conf
 RUN echo "pm.min_spare_servers=5" >> /usr/local/etc/php-fpm.d/www.conf
 RUN echo "pm.max_spare_servers=10" >> /usr/local/etc/php-fpm.d/www.conf
 
-RUN touch /tmp/xdebug.log
-RUN chmod 777 /tmp/xdebug.log
+# RUN touch /tmp/xdebug.log
+# RUN chmod 777 /tmp/xdebug.log
 
 WORKDIR /var/www/openloyalty
 
