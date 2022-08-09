@@ -119,10 +119,14 @@ cd ../../
 docker-compose -f docker/docker-compose.dev.yml up
 ```
 
-Remember to setup database using bellow command:
-
+Remember to setup database using bellow command: (optionality because run automatic after UP)
 ```
 docker-compose -f docker/docker-compose.dev.yml exec --user=www-data php phing setup
+```
+
+Add in /etc/hosts
+```
+127.0.0.1   openloyalty.localhost
 ```
 
 After starting Open Loyalty in developer mode, it exposes services under slightly different URLs:
